@@ -1,0 +1,38 @@
+
+spring:
+  application:
+    name: Shop
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}/Shop_Project
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+
+  jpa:
+    properties:
+      hibernate:
+        auto_quote_keyword: true
+
+server:
+  servlet:
+    context-path: /api
+
+key:
+  access: ${KEY_ACCESS}
+  refresh: ${KEY_REFRESH}
+
+logging:
+  file:
+    name: logs/log.log
+  level:
+    root: info
+
+massages:
+  hello: Hello from Local!
+
+
+
+
